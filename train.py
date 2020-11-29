@@ -415,6 +415,11 @@ if __name__ == '__main__':
     parser.add_argument('--cfg', type=str, default='', help='model.yaml path')
     parser.add_argument('--data', type=str, default='data/coco128.yaml', help='data.yaml path')
     parser.add_argument('--hyp', type=str, default='data/hyp.scratch.yaml', help='hyperparameters path')
+	
+	parser.add_argument('--lr0', type=str, default='0.01', help='initial learning rate 1E-2')
+	parser.add_argument('--momentum', type=str, default='0.937', help='SGD momentum')
+	parser.add_argument('--weight_decay', type=str, default='0.0005', help='optimizer weight decay 5e-4')
+	
     parser.add_argument('--epochs', type=int, default=300)
     parser.add_argument('--batch-size', type=int, default=16, help='total batch size for all GPUs')
     parser.add_argument('--img-size', nargs='+', type=int, default=[640, 640], help='[train, test] image sizes')
@@ -481,6 +486,11 @@ if __name__ == '__main__':
             warn('Compatibility: %s missing "box" which was renamed from "giou" in %s' %
                  (opt.hyp, 'https://github.com/ultralytics/yolov5/pull/1120'))
             hyp['box'] = hyp.pop('giou')
+    
+    print(hyp)
+    print(opt.lr0)
+    print(opt.momentum)
+    print(opt.weight_decay)
 
     # Train
     logger.info(opt)
