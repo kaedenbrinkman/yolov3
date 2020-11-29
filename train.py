@@ -416,9 +416,9 @@ if __name__ == '__main__':
     parser.add_argument('--data', type=str, default='data/coco128.yaml', help='data.yaml path')
     parser.add_argument('--hyp', type=str, default='data/hyp.scratch.yaml', help='hyperparameters path')
 	
-	parser.add_argument('--lr0', type=str, default='0.01', help='initial learning rate 1E-2')
-	parser.add_argument('--momentum', type=str, default='0.937', help='SGD momentum')
-	parser.add_argument('--weight_decay', type=str, default='0.0005', help='optimizer weight decay 5e-4')
+    parser.add_argument('--lr0', type=str, default='0.01', help='initial learning rate 1E-2')
+    parser.add_argument('--momentum', type=str, default='0.937', help='SGD momentum')
+    parser.add_argument('--weight_decay', type=str, default='0.0005', help='optimizer weight decay 5e-4')
 	
     parser.add_argument('--epochs', type=int, default=300)
     parser.add_argument('--batch-size', type=int, default=16, help='total batch size for all GPUs')
