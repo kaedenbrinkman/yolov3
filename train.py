@@ -488,11 +488,11 @@ if __name__ == '__main__':
             hyp['box'] = hyp.pop('giou')
     
     print(hyp)
-    print(hyp[lr0])
+    print(hyp['lr0'])
     print(opt.lr0)
-    print(hyp[momentum])
+    print(hyp['momentum'])
     print(opt.momentum)
-    print(hyp[weight_decay])
+    print(hyp['weight_decay'])
     print(opt.weight_decay)
 
     # Train
