@@ -131,9 +131,8 @@ def train(hyp, opt, device, tb_writer=None, wandb=None):
     if wandb and wandb.run is None:
         opt.hyp = hyp  # add hyperparameters
         wandb_run = wandb.init(config=opt, resume="allow",
-                               project='YOLOv3' if opt.project == 'runs/train' else Path(opt.project).stem,
-                               name=save_dir.stem,
-                               id=ckpt.get('wandb_id') if 'ckpt' in locals() else None)
+                               project='YOLOv3 TrainDetector',
+                               name=save_dir.stem)
 
     # Resume
     start_epoch, best_fitness = 0, 0.0
